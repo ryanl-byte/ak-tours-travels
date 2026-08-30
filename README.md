@@ -45,14 +45,14 @@ The site shows it as "From ₹4,500" everywhere automatically.
 Near the very top of `js/content.js`:
 
 ```
-phone: "+91XXXXXXXXXX",
+phone: "+918097004157",
 ```
-Put the real number in that one line (keep the `+91` and the quotes). Every
-WhatsApp button, phone link and contact line on the site follows it.
+Change the number in that one line (keep the `+91` format and the quotes).
+Every WhatsApp button, phone link and contact line on the site follows it.
 
-*(One extra step at launch, for whoever helps technically: also run a
-find-and-replace of `+91XXXXXXXXXX` across all files — the number is baked
-into a few behind-the-scenes places search engines read.)*
+*(If the number ever changes, ask whoever helps technically to also run a
+find-and-replace of the old number across all files — it is baked into a few
+behind-the-scenes places search engines read.)*
 
 ### 3. Change any wording
 Find the sentence in `js/content.js` (your browser's "find in page" works),

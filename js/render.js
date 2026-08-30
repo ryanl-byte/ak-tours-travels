@@ -12,8 +12,8 @@ var RENDER = (function () {
       .replace(/"/g, "&quot;");
   }
 
-  /* Keeps the X placeholders so an unconfigured number produces an obviously
-     broken link (wa.me/91XXXXXXXXXX) rather than a plausible-looking one. */
+  /* Keeps any X placeholders so an unconfigured number would produce an
+     obviously broken link rather than a plausible-looking one. */
   function digits(phone) { return String(phone).replace(/[^0-9X]/gi, ""); }
 
   function waLink(content, message) {

@@ -16,7 +16,7 @@
 const CONTENT = {
 
   /* ---- The one and only phone number. Format: +91 then 10 digits. ---- */
-  phone: "+91XXXXXXXXXX",
+  phone: "+918097004157",
 
   email: "hello@example.com", /* REPLACE with the real address */
 
