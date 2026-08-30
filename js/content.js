@@ -41,6 +41,34 @@ const CONTENT = {
     sub: "Half-day walks, full-day escapes, food after dark. Every one is private by default, led by Pooja, and booked with a WhatsApp message — prices are confirmed in the chat before anything is fixed."
   },
 
+  /* ---- Extras strip shown under the tours grid. These become full tour
+     pages once Pooja sends details (destinations, durations, prices). ---- */
+  extras: {
+    heading: "Also available",
+    sub: "Newer additions and easy add-ons — ask for details and prices on WhatsApp.",
+    items: [
+      {
+        title: "India tours",
+        text: "Travelling beyond Mumbai? Longer trips around India can be arranged — tell Pooja where you're hoping to go and she'll help plan it."
+        /* CONFIRM WITH POOJA: destinations, durations and prices — becomes its own page once she sends details */
+      },
+      {
+        title: "Mehndi (henna)",
+        text: "Sit down for traditional mehndi — henna patterns applied by hand, a lovely slow pause in the middle of a busy trip."
+        /* CONFIRM WITH POOJA: where it happens, how long, price */
+      },
+      {
+        title: "Cooking class",
+        text: "Learn to cook the dishes you've been eating all week — a hands-on class arranged around what you'd like to make."
+        /* CONFIRM WITH POOJA: venue, duration, menu, price */
+      },
+      {
+        title: "Airport pickup & drop",
+        text: "Landing late or flying out early? Airport pickup and drop-off can be arranged — on its own or added to any tour."
+      }
+    ]
+  },
+
   pooja: {
     kicker: "Meet your guide",
     heading: "This is Pooja's city. She'll lend it to you for a day.",
@@ -115,7 +143,7 @@ const CONTENT = {
     items: [
       {
         q: "Where do you pick up from?",
-        a: "Hotel pickup can usually be arranged — tell Pooja where you're staying when you message and she'll confirm the details and time. If your hotel is outside the pickup area, she'll suggest an easy meeting point instead." /* CONFIRM WITH POOJA: pickup coverage */
+        a: "Hotel pickup can usually be arranged — tell Pooja where you're staying when you message and she'll confirm the details and time. If your hotel is outside the pickup area, she'll suggest an easy meeting point instead. Airport pickup and drop-off can also be arranged." /* CONFIRM WITH POOJA: pickup coverage */
       },
       {
         q: "How do I pay?",
@@ -190,6 +218,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your private guide from start to finish",
+        "Bottled water",
         "A route and pace planned around your party",
         "Hotel pickup and drop-off (details confirmed on WhatsApp)"
       ],
@@ -250,6 +279,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your private guide from pickup to drop-off",
+        "Bottled water",
         "A tour for your party only — no strangers, no group pace",
         "Hotel pickup and drop-off (details to confirm)"
       ],
@@ -310,6 +340,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your guide for the whole route",
+        "Bottled water",
         "Private tour — your party only, never a crowd with a flag",
         "Flexible start time"
       ],
@@ -381,6 +412,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your private guide throughout",
+        "Bottled water",
         "A tour for your party only — no strangers",
         "Flexible start time, planned around you"
       ],
@@ -438,6 +470,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your guide for the full day",
+        "Bottled water",
         "Private tour — your party only",
         "Car with driver for the day (details to confirm)",
         "Hotel pickup and drop-off (to confirm for your location)"
@@ -497,6 +530,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your private guide for the day",
+        "Bottled water",
         "A route planned around your shopping list",
         "Bargaining help at the stalls — as much or as little as you want",
         "Hotel pickup and drop-off (confirm your location on WhatsApp)"
@@ -569,7 +603,7 @@ const CONTENT = {
         "A private walk — your party only",
         "A route planned around your diet, allergies and spice level",
         "Tastings at each stop (confirm when you book)",
-        "Bottled water for the walk (confirm when you book)"
+        "Bottled water for the walk"
       ],
       excluded: [
         "Anything you order beyond the planned tastings",
@@ -600,7 +634,6 @@ const CONTENT = {
       },
       needsConfirmation: [
         "Whether tastings at each stop are included in the tour fee, and roughly how many the fee covers",
-        "Bottled water — confirm it is provided and included in the fee",
         "Hotel pickup — coverage, and where guests outside it should meet",
         "Whether an afternoon or daytime start is possible on request"
       ],
@@ -632,6 +665,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your guide for the whole day",
+        "Bottled water",
         "Private tour — your party only",
         "Route planned around tide timings for Haji Ali",
         "Hotel pickup and drop-off (details to confirm when you book)"
@@ -703,6 +737,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your private guide — your party only",
+        "Bottled water",
         "Auto-rickshaws and drivers for the full route, up to 3 passengers per auto (to confirm)",
         "Hotel pickup and drop-off in the suburbs (details to confirm)"
       ],
@@ -762,6 +797,7 @@ const CONTENT = {
       ],
       included: [
         "Pooja as your guide throughout",
+        "Bottled water",
         "Private tour — your party only",
         "Hotel pickup and drop-off (details to confirm)",
         "Car with driver for the day (to confirm)"

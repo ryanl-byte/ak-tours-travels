@@ -62,6 +62,21 @@ var RENDER = (function () {
     return content.tours.map(function (t) { return tourCard(content, t, base); }).join("\n");
   }
 
+  /* ---- homepage: extras strip under the tours grid ---- */
+  function extras(content) {
+    var x = content.extras;
+    if (!x) return "";
+    return "<h3>" + esc(x.heading) + "</h3>" +
+      '<p class="extras-sub">' + esc(x.sub) + "</p>" +
+      '<div class="extras-grid">' +
+      x.items.map(function (it) {
+        var msg = "Hi Pooja! I'd like to ask about " + it.title + ".";
+        return '<div class="extras-item"><h4>' + esc(it.title) + "</h4><p>" + esc(it.text) + "</p>" +
+          '<a class="text-link" data-wa data-wa-msg="' + esc(msg) + '" href="' + waLink(content, msg) + '">Ask on WhatsApp</a></div>';
+      }).join("") +
+      "</div>";
+  }
+
   /* ---- homepage: meet Pooja ---- */
   function pooja(content, base) {
     var p = content.pooja;
@@ -187,7 +202,7 @@ var RENDER = (function () {
 
   return {
     esc: esc, waLink: waLink, tourMessage: tourMessage, picture: picture,
-    tourCard: tourCard, toursGrid: toursGrid, pooja: pooja, whyUs: whyUs,
+    tourCard: tourCard, toursGrid: toursGrid, extras: extras, pooja: pooja, whyUs: whyUs,
     testimonials: testimonials, faq: faq, contact: contact, tourPage: tourPage
   };
 })();

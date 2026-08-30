@@ -31,6 +31,7 @@
       /* ---- homepage: swap each rendered section ---- */
       var sections = {
         "tours": function () { return RENDER.toursGrid(CONTENT, base); },
+        "extras": function () { return RENDER.extras(CONTENT); },
         "pooja": function () { return RENDER.pooja(CONTENT, base); },
         "why": function () { return RENDER.whyUs(CONTENT); },
         "testimonials": function () { return RENDER.testimonials(CONTENT); },
