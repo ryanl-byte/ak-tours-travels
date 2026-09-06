@@ -21,7 +21,7 @@ const CONTENT = {
   email: "poojreddy026@gmail.com",
 
   siteName: "AK Tours & Travels",
-  siteUrl: "https://ryanl-byte.github.io/ak-tours-travels/",
+  siteUrl: "https://aktoursindia.com/",
 
   /* First line of the WhatsApp chat when someone taps a button. */
   whatsappGreeting: "Hi Pooja! I found AK Tours & Travels online and I'd like to ask about a tour.",

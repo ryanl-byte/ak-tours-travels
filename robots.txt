@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ryanl-byte.github.io/ak-tours-travels/sitemap.xml
+Sitemap: https://aktoursindia.com/sitemap.xml

@@ -2,7 +2,7 @@
 
 This is the website for **AK Tours & Travels**, Pooja's Mumbai tour company.
 
-- **Live site:** https://ryanl-byte.github.io/ak-tours-travels/
+- **Live site:** https://aktoursindia.com/
 - It costs nothing to run. It is hosted free on GitHub Pages.
 - It is plain HTML — no frameworks, no build tools, nothing to install.
 
