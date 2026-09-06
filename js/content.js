@@ -123,14 +123,14 @@ const CONTENT = {
      reviews (and set sample: false) before promoting the site. ---- */
   testimonials: {
     kicker: "What guests say",
-    heading: "Real reviews coming soon.",
-    note: "These three are sample placeholders so you can see the layout — swap them for real reviews and change sample to false.",
+    heading: "The first reviews are in.",
+    note: "The remaining sample cards will be swapped for real guest reviews as they arrive.",
     items: [
-      { /* REPLACE with a real review */
-        quote: "Sample review — replace me. Two or three sentences from a real guest about their day with Pooja go here.",
-        name: "Guest name",
-        origin: "Country",
-        sample: true
+      {
+        quote: "Took the Elephanta Island tour with Pooja and it was the highlight of our time in Mumbai. Everything was organised from the first WhatsApp message, so we never had to think about tickets, timings or the ferry. She seems to know everyone, and she has a real gift for making the whole group feel looked after. We felt seen, safe and never rushed. If you're in Mumbai, book with her. You'll be in very good hands.",
+        name: "Ryan",
+        origin: "UK",
+        sample: false
       },
       { /* REPLACE with a real review */
         quote: "Sample review — replace me. The best reviews mention a specific moment: a stall, a story, a view they didn't expect.",
