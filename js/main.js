@@ -20,7 +20,10 @@
   }
 
   try {
-    if (slug) {
+    if (body.getAttribute("data-page") === "gallery") {
+      var gal = document.querySelector('[data-render="gallery"]');
+      if (gal) gal.innerHTML = RENDER.gallery(CONTENT, base);
+    } else if (slug) {
       /* ---- tour detail page: rebuild the whole <main> from content.js ---- */
       var tour = CONTENT.tours.filter(function (t) { return t.slug === slug; })[0];
       if (tour) {

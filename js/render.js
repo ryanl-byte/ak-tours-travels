@@ -48,7 +48,7 @@ var RENDER = (function () {
       '<div class="tour-card-body">' +
         '<h3><a href="' + href + '">' + esc(tour.name) + "</a></h3>" +
         '<p class="tour-meta"><span>' + esc(tour.duration) + "</span>" +
-          '<span class="tour-price">From <strong>' + esc(tour.priceFrom) + "</strong><!-- CONFIRM PRICE --></span></p>" +
+          '<span class="tour-price">From <strong>' + esc(tour.priceFrom) + "</strong> / person</span></p>" +
         '<p class="tour-summary">' + esc(tour.card) + "</p>" +
         '<p class="tour-card-actions">' +
           '<a class="btn btn-small" data-wa data-wa-msg="' + esc(tourMessage(content, tour)) + '" href="' +
@@ -60,6 +60,19 @@ var RENDER = (function () {
 
   function toursGrid(content, base) {
     return content.tours.map(function (t) { return tourCard(content, t, base); }).join("\n");
+  }
+
+  /* ---- gallery grid (gallery.html) ---- */
+  function gallery(content, base) {
+    var g = content.gallery;
+    if (!g) return "";
+    return g.items.map(function (it) {
+      var p = base + "img/" + it.image;
+      return '<figure class="gallery-item">' +
+        '<picture><source type="image/webp" srcset="' + p + '-sm.webp 640w, ' + p + '.webp 1200w" sizes="(max-width: 700px) 47vw, 30vw">' +
+        '<img src="' + p + '.jpg" alt="' + esc(it.alt) + '" loading="lazy" decoding="async"></picture>' +
+        "<figcaption>" + esc(it.caption) + "</figcaption></figure>";
+    }).join("\n");
   }
 
   /* ---- homepage: extras strip under the tours grid ---- */
@@ -152,7 +165,7 @@ var RENDER = (function () {
         "<h1>" + esc(tour.name) + "</h1>" +
         '<p class="tour-tagline">' + esc(tour.tagline) + "</p>" +
         '<p class="tour-meta tour-meta-page"><span>' + esc(tour.duration) + "</span>" +
-          '<span class="tour-price">From <strong>' + esc(tour.priceFrom) + "</strong><!-- CONFIRM PRICE --></span></p>" +
+          '<span class="tour-price">From <strong>' + esc(tour.priceFrom) + "</strong> / person</span></p>" +
       "</header></div>" +
       '<div class="wrap">' + picture(base, tour.image, tour.imageAlt, "tour-hero-img", true) + "</div>" +
       '<div class="wrap tour-columns">' +
@@ -167,8 +180,16 @@ var RENDER = (function () {
           (tour.specialBox
             ? '<aside class="special-box"><h2>' + esc(tour.specialBox.title) + "</h2>" + list(tour.specialBox.items) + "</aside>"
             : "") +
-          (tour.communityNote === null && tour.slug === "city-dharavi-tour"
-            ? "<!-- CONFIRM WITH POOJA: if a share of the tour fee goes back into community projects, state exactly what here. Do not publish a vague claim. -->"
+          (tour.communityNote
+            ? '<aside class="community-note"><p>' + esc(tour.communityNote) + "</p></aside>"
+            : "") +
+          (tour.pricing && tour.pricing.length
+            ? "<h2>Prices</h2>" +
+              '<p class="pricing-intro">All prices are per person — pick an option and confirm it on WhatsApp.</p>' +
+              '<ul class="pricing-list">' +
+              tour.pricing.map(function (o) {
+                return "<li><span>" + esc(o.label) + "</span><strong>" + esc(o.price) + "</strong></li>";
+              }).join("") + "</ul>"
             : "") +
           '<div class="inc-exc">' +
             "<div><h2>Included</h2>" + list(tour.included) + "</div>" +
@@ -179,10 +200,16 @@ var RENDER = (function () {
         "</div>" +
         '<aside class="tour-aside">' +
           '<div class="aside-card">' +
-            '<p class="aside-price">From <strong>' + esc(tour.priceFrom) + "</strong><!-- CONFIRM PRICE --></p>" +
+            '<p class="aside-price">From <strong>' + esc(tour.priceFrom) + "</strong> per person</p>" +
             '<p class="aside-duration">' + esc(tour.duration) + "</p>" +
+            (tour.pricing && tour.pricing.length > 1
+              ? '<ul class="aside-pricing">' +
+                tour.pricing.map(function (o) {
+                  return "<li><span>" + esc(o.label) + "</span><strong>" + esc(o.price) + "</strong></li>";
+                }).join("") + "</ul>"
+              : "") +
             waBtn +
-            '<p class="aside-note">Private by default — you book by chatting, not by paying online.</p>' +
+            '<p class="aside-note">Group or private — you book by chatting, not by paying online.</p>' +
           "</div>" +
         "</aside>" +
       "</div>" +
@@ -202,7 +229,8 @@ var RENDER = (function () {
 
   return {
     esc: esc, waLink: waLink, tourMessage: tourMessage, picture: picture,
-    tourCard: tourCard, toursGrid: toursGrid, extras: extras, pooja: pooja, whyUs: whyUs,
+    tourCard: tourCard, toursGrid: toursGrid, extras: extras, gallery: gallery,
+    pooja: pooja, whyUs: whyUs,
     testimonials: testimonials, faq: faq, contact: contact, tourPage: tourPage
   };
 })();
